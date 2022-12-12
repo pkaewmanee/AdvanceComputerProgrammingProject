@@ -14,7 +14,6 @@ public:
   int get_wel();
   int get_sat();
   int get_qual();
-  void print_professor();
   void set_name(string n) { name = n; }
   void set_sub(string n) { sub = n; }
   void set_wel(int n) {
@@ -71,13 +70,4 @@ professor::professor(string n, string su, int w, int sa, int q) {
   qual = q;
 }
 
-professor::~professor() { cout << "Entry is gone." << endl; }
-
-void professor::print_professor() {
-  cout << "Name: " << get_name() << endl;
-  cout << "Subject: " << get_sub() << endl;
-  cout << "How well they teach: " << get_wel() << endl;
-  cout << "Student Satisfaction: " << get_sat() << endl;
-  cout << "Quality of the Material: " << get_qual() << endl;
-  cout << endl;
-}
+professor::~professor() { cout << ""; }

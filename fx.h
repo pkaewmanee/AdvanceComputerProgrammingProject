@@ -1,7 +1,11 @@
+#ifndef FX_H
+#define FX_H
+
 #include <iostream>
 #include <string.h>
 using namespace std;
 #include "professor.h"
+#include <iomanip>
 
 void insert_sat(int[], professor *, int);
 void insert_wel(int[], professor *, int);
@@ -11,7 +15,9 @@ void print_bar(int[], int);
 int mean(int[], int);
 int median(int[], int);
 int mode(int[], int);
-void print_sort(int[], int num);
+void print_sort_as(int[], int num);
+void print_sort_de(int[], int num);
+void print_prof(professor *, int);
 
 void insert_wel(int sort_wel[], professor *l, int num) {
   int i;
@@ -131,8 +137,31 @@ int mode(int sort[], int num) {
   return counter;
 }
 
-void print_sort(int sort[], int num){
-  for (int s; s < num; s++){
-    cout<<sort[s]<<" ";
+void print_sort_as(int sort[], int num) {
+  for (int s; s < num; s++) {
+    cout << sort[s] << " ";
   }
 }
+
+void print_sort_de(int sort[], int num) {
+  for (int s = num; num > 0; s--) {
+    cout << sort[s] << " ";
+  }
+}
+
+void print_prof(professor *l, int num) {
+  int i = 0;
+  cout << "Name: " << l[i].get_name() << endl;
+  cout << "Subject: " << l[i].get_sub() << endl;
+  cout << "Dataset";
+  cout << setw(30) << "How well they teach: ";
+  cout << setw(30) << "Student Satisfaction: ";
+  cout << setw(30) << "Quality of the Material: " << endl;
+  for (i; i < num; i++) {
+    cout << "Dataset " << i + 1 << setw(30) << l[i].get_wel() << setw(30)
+         << l[i].get_sat() << setw(30) << l[i].get_qual() << endl;
+  }
+  cout << endl;
+}
+
+#endif
