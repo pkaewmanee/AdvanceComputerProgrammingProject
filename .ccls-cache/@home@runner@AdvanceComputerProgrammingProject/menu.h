@@ -3,7 +3,7 @@
 using namespace std;
 #include "DCLL.h"
 #include "queue.h"
-
+// How to be a Doctor, Teacher, Astronaut, Cop, and Delivery Guy in a Year
 void menu();
 void menu2(void);
 void display_data(professor *, int[], int[], int[], int, int, int, int,
@@ -117,13 +117,16 @@ void menu() {
 
         if (mtcounter == 0) {
 
-          cout << "Professor Name:";
+          cout << "Professor Name: ";
 
           for (i = 0; i < n; i++) {
             string name_pr = q.dequeue()->get_name();
             qq.dequeue();
             tempq.dequeue();
-            cout << "Professor " << name_pr << " ";
+            if (i == n) {
+              cout << "Professor " << name_pr;
+            } else
+              cout << "Professor " << name_pr << " <- ";
           }
 
           cout << "\n" << endl;
@@ -146,7 +149,7 @@ void menu() {
           if (ll == NULL) {
             cout << "There's no Professor " << name << " in the dataset.\n"
                  << endl; // case sensitive
-            i-=1;
+            i -= 1;
           } else {
             if (qcounter.isEmpty() == 0) {
               if (name != qcounter.dequeue()->get_name()) {
@@ -183,7 +186,10 @@ void menu() {
 
         for (i = 0; i < n; i++) {
           string name_pr = tempq.dequeue()->get_name();
-          cout << name_pr << " ";
+          if (i == n) {
+            cout << "Professor " << name_pr;
+          } else
+            cout << "Professor " << name_pr << " <- ";
         }
 
         cout << "\n" << endl;
