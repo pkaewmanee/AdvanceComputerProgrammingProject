@@ -32,7 +32,7 @@ void menu() {
       if (pds.isEmpty() == 1 && q.isEmpty() == 1) {
 
         while (num <= 2) {
-          cout << "How many set of data you want (At least 3): ";
+          cout << "How many surveys from students (At least 3): ";
           cin >> num;
         }
 
@@ -64,7 +64,7 @@ void menu() {
         num = 0;
 
         while (num <= 2) {
-          cout << "How many set of data you want (At least 3): ";
+          cout << "How many surveys from students (At least 3): ";
           cin >> num;
         }
 
@@ -361,7 +361,7 @@ professor create_professor(professor l, string name, string sub, int i) {
   int wel = -1, sat = -1, qual = -1;
   cout << endl;
   cout << "Please rate the professor from 0 - 10" << endl;
-  cout << "Dataset " << i + 1 << ": " << endl;
+  cout << "Student " << i + 1 << ": " << endl;
   l.set_name(name);
   l.set_sub(sub);
 

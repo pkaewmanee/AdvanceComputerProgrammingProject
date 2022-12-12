@@ -153,12 +153,12 @@ void print_prof(professor *l, int num) {
   int i = 0;
   cout << "Name: " << l[i].get_name() << endl;
   cout << "Subject: " << l[i].get_sub() << endl;
-  cout << "Dataset";
+  cout << "How many students: ";
   cout << setw(30) << "How well they teach: ";
   cout << setw(30) << "Student Satisfaction: ";
   cout << setw(30) << "Quality of the Material: " << endl;
   for (i; i < num; i++) {
-    cout << "Dataset " << i + 1 << setw(30) << l[i].get_wel() << setw(30)
+    cout << "Student " << i + 1 << setw(30) << l[i].get_wel() << setw(30)
          << l[i].get_sat() << setw(30) << l[i].get_qual() << endl;
   }
   cout << endl;
